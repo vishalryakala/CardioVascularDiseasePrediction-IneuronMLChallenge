@@ -2,6 +2,8 @@
 
 This project predicts whether a person is suffering from Cardio Vascular Disease or not by taking certain inputs related to their health, body and lifestyle.
 
+Access the application here:- https://cardiovasculardiseasepredictor.herokuapp.com/
+
 Project Files and their Details:-
 
 Frame work used here is Flask
