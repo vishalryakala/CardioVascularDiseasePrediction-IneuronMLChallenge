@@ -4,9 +4,10 @@ This project predicts whether a person is suffering from Cardio Vascular Disease
 
 Project Files and their Details:-
 
-model.py - This is the actual model file and contains the model which gave the heighest accuracy on Test Data.
+Model_gbc.py - This is the actual model file and contains the model which gave the heighest accuracy on Test Data.
 
 app.py - This is the App file where integration between model and UI happens using Flask.
 
 templates/index.html - This is the UI of the application
 
+model_gbc.pkl - This is the pickle generated
