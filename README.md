@@ -1,17 +1,9 @@
 # CardioVascularDiseasePrediction-IneuronMLChallenge
 
-This project predicts whether a person is suffering from Cardio Vascular Disease or not by taking certain inputs related to their health, body and lifestyle.
+• This repository consists of files required to deploy a Machine Learning Web App created with Flask on Heroku platform.
 
-Access the application here:- https://cardiovasculardiseasepredictor.herokuapp.com/
+• This project predicts whether a person is suffering from Cardio Vascular Disease or not by taking certain inputs related to their health, body and lifestyle.
 
-Project Files and their Details:-
+• If you want to view the deployed model, click on the following link:
+Deployed at: https://cardiovasculardiseasepredictor.herokuapp.com/
 
-Frame work used here is Flask
-
-Model_gbc.py - This is the actual model file and contains the model which gave the heighest accuracy on Test Data.
-
-app.py - This is the App file where integration between model and UI happens 
-
-templates/index.html - This is the UI of the application
-
-model_gbc.pkl - This is the pickle generated
