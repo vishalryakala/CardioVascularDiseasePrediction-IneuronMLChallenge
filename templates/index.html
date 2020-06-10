@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+  <title>CARDIO VASCULAR DISEASE PREDICTOR ML API</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images_heart.ico') }}">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+<style>
+.container{
+    padding: 12px;
+	position: relative;
+	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+@keyframes change-gradient {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}
+
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: #ffffff;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	font-weight: normal;
+}
+
+.p{
+	color: #ffffff;
+    font-style: italic;
+    font-size: 14px;
+    margin: -5px 0 0;
+	}
+	
+h1 {text-align: center;
+color: white;
+}
+form {text-align: center;}
+button {text-align: center;}
+div {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  }
+
+body {
+  background-color: White;
+}
+
+
+.my-cta-button{
+	background: #f44336;
+   	border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+	margin-top: 10px;
+    padding: 10px 36px;
+    color: #000000;
+    display: inline-block;
+   	font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: #4d089a;
+    border: 2px solid #4d089a;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+
+
+.input{
+  float:center;
+  width:280px;
+  height:25px;
+  margin-bottom:3px; /*or whatever you want the spacing to be*/
+  border-radius: 4px;
+}
+
+
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 12px;
+	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+
+/* Contact */
+.contact-icon{
+	color: #ffffff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: #8c8c8c;
+}
+
+.footer-description{
+	color: #ffffff;
+	font-style: italic;
+	margin: 0;
+	font-size: 12px;
+	}
+
+.result{
+	color: Black;
+	}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h2 class='container-heading'><span class="heading_font">CARDIO VASCULAR DISEASE PREDICTOR</span></h2>
+        <div class='p'>
+    	<p>A Machine Learning Web App, Built with Flask.</p>
+    </div>
+    </div></br>
+		
+ <div class="login">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input class="input" type="number" name="gender" placeholder="Gender ('1'=Male, '0'=Famale)" required="required" min="0" max="1"/><br>
+        <input class="input" type="number" name="age" placeholder="Age (eg:25)" required="required" min="1" max="100"/><br>
+        <input class="input" type="number" name="height" placeholder="Height in cm (eg:180)" required="required" min="1" max="250"/><br>
+		<input class="input" type="number" name="weight" placeholder="Weight in kg (eg:76)" required="required" min="1" max="500"/><br>
+        <input class="input" type="number" name="ap_hi" placeholder="Systolic blood pressure (eg:120)" required="required" min="1" max="300"/><br>
+        <input class="input" type="number" name="ap_lo" placeholder="Diastolic blood pressure (eg:80)" required="required" min="1" max="300"/><br>
+		<input class="input" type="number" name="cholesterol" placeholder="Cholesterol ('1'=Low,'2'=Medium,'3'=High)" required="required" min="1" max="3"/><br>
+		<input class="input" type="number" name="gluc" placeholder="Glucose ('1'=Low,'2'=Medium,'3'=High)" required="required" min="1" max="3"/><br>
+		<input class="input" type="number" name="smoke" placeholder="Smoking ('1'=Yes,'0'=No)" required="required" min="0" max="1"/><br>
+		<input class="input" type="number" name="alco" placeholder="Alcohol ('1'=Yes,'0'=No)" required="required" min="0" max="1"/><br>
+		<input class="input" type="number" name="active" placeholder="Exercise ('1'=Yes,'0'=No)" required="required" min="0" max="1"/><br>
+		
+        <button type="submit" class="my-cta-button">Predict</button><br>
+    </form>
+
+   <p class='result'>{{ prediction_text }}</p>
+
+ </div>
+ 
+ <div class='footer'>
+    <div class="contact">
+        <a target="_blank" href="https://github.com/vishalryakala/CardioVascularDiseasePrediction-IneuronMLChallenge"><i class="fab fa-github fa-lg contact-icon"></i></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/vishal-ryakala/"><i class="fab fa-github fa-lg contact-icon"></i></i></i></a>
+    </div>
+    <p class='footer-description'>By Vishal Ryakala.</p>
+</div>
+
+</body>
+</html>
