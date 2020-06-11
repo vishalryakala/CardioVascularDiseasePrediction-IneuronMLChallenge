@@ -7,3 +7,7 @@
 • If you want to view the deployed model, click on the following link:
 Deployed at: https://cardiovasculardiseasepredictor.herokuapp.com/
 
+A glimpse of the app is below:-
+
+
+![](images/screencapture.gif)
