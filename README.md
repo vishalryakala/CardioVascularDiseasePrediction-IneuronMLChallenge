@@ -13,4 +13,4 @@ A glimpse of the app is below:-
 ![](images/screencapture.gif)
 
 
-#Special Note:- Thanks to Anuj Vyas for the css template.
+#Thanks to https://github.com/anujvyas/Diabetes-Prediction-Deployment for the css template.
